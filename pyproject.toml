@@ -1,0 +1,13 @@
+[project]
+name = "dircont"
+version = "0.1.0"
+description = "CLI tool to concatenate Python files from a directory."
+authors = [{ name="David Warutumo", email="davidwarchy@gmail.com" }]
+dependencies = []
+
+[project.scripts]
+dircont = "dircont.main:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

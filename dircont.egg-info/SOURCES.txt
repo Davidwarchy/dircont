@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+dircont/__init__.py
+dircont/main.py
+dircont.egg-info/PKG-INFO
+dircont.egg-info/SOURCES.txt
+dircont.egg-info/dependency_links.txt
+dircont.egg-info/entry_points.txt
+dircont.egg-info/top_level.txt
