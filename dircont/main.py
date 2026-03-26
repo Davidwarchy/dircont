@@ -19,8 +19,12 @@ def main():
     parser = argparse.ArgumentParser(
         description="Concatenate specified types of files from a folder into one text file."
     )
-    parser.add_argument("-i", "--input", required=True, help="Input directory")
-    parser.add_argument("-o", "--output", default="x.markdown", help="Output file name")
+    parser.add_argument(
+        "-i", "--input", default=".", help="Input directory. Default: current directory"
+    )
+    parser.add_argument(
+        "-o", "--output", default="x.markdown", help="Output file name. Default: x.markdown"
+    )
     parser.add_argument(
         "-f", "--formats", nargs="+", default=[".py"],
         help="File extensions to include (e.g., .py .txt .md). Default: .py"

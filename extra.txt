@@ -1,0 +1,3 @@
+Dircont
+Select everything 
+Ignore directories (like output) 
