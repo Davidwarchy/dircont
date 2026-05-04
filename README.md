@@ -1,72 +1,37 @@
 # dircont
 
-**dircont** is a simple CLI tool for recursively reading and concatenating code files (like `.py`, `.md`, etc.) from a directory into a single output file. It's useful for documentation, code review, archiving, or preparing code for large language models.
+Concatenate files in a directory into a single markdown file.
 
-## ✨ Features
-
-- Concatenates all files of specified extensions from a directory
-- Recursively includes files from subdirectories
-- Adds file headers for traceability
-- Supports multiple formats: `.py`, `.txt`, `.md`, etc.
-- Simple and fast to use
-
-## 📦 Installation
-
-Clone the repo and install in **editable mode**:
+## Installation
 
 ```bash
-git clone https://github.com/davidwarchy/dircont.git
-cd dircont
 pip install -e .
 ```
 
-This makes the `dircont` command available globally.
-
-> ⚠️ Requires Python 3.6+
-
-## 🚀 Usage
+## Usage
 
 ```bash
-dircont -i . 
-``` 
+dircont
+```
 
-The above will concatenate all python files into a single output file `x.markdown`, saved in the current directory. 
+Default behavior:
+
+- input: `.`
+- output: `x.markdown`
+- formats: `.md .py`
+- ignores: `output/ .git __pycache__/ venv/ .venv/`
+
+Equivalent to:
 
 ```bash
-dircont -i <input_directory> [-o <output_file>] [-f <extensions>...]
+dircont -i . -o x.markdown -f .md .py
 ```
 
-### Arguments
-
-| Flag            | Description                                          | Default       |
-|-----------------|------------------------------------------------------|---------------|
-| `-i`, `--input` | Directory to search for files                        | **Required**  |
-| `-o`, `--output`| Name of the output file                              | `x.markdown`  |
-| `-f`, `--formats`| File extensions to include (e.g., `.py .md .txt`)   | `.py`         |
-
-### Example
-
-Concatenate all `.py`, `.md`, and `.txt` files into `combined.md`:
+## Options
 
 ```bash
-dircont -i ./myproject -o combined.md -f .py .md .txt
+dircont -i my_project
+dircont -o output.md
+dircont -f .py .txt
+dircont --ignore output logs data
 ```
-
-## 🛠 Project Structure
-
-```
-dircont/
-├── dircont/
-│   └── main.py        # CLI logic
-├── pyproject.toml     # Project config
-├── README.md
-```
-
-## ✍️ Author
-
-**David Warutumo**  
-📧 davidwarchy@gmail.com
-
-## 📄 License
-
-MIT 
